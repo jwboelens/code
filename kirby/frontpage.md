@@ -11,7 +11,7 @@ Frontpage with different pieces of content. For instance, the latest blog posts 
 <?php foreach (page('photos')->children()->listed()->sortBy('date', 'desc')->limit('3') as $photo): ?>
 	<?php if($image = $photo->image()): ?>
         <a href="<?= $photo->url() ?>">
-   			<img src="<?= $image->crop(400,300)->url() ?>" alt="">
+   		<img src="<?= $image->crop(400,300)->url() ?>" alt="">
         </a>
     <?php endif ?>
 <?php endforeach ?>
