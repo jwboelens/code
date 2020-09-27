@@ -1,5 +1,6 @@
 Create a photo / project grid:
 
+```
 .projects {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -11,7 +12,9 @@ Create a photo / project grid:
   width: 100%;
   margin-bottom: 0;
 }
+```
 
+```
 <ul class="projects">
     <?php foreach ($page->children()->listed()->sortBy('date', 'desc') as $photo): ?>
         <li>
@@ -26,3 +29,4 @@ Create a photo / project grid:
       </li>
    <?php endforeach ?>    
 </ul>
+```
