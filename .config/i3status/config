@@ -1,0 +1,45 @@
+general {
+	colors = true
+	color_good = "#BBBBBB"
+	color_bad = "#CC1616"
+	color_degraded = "#55858E"
+	interval = 2
+}
+
+order += "disk /"
+order += "memory"
+order += "load"
+order += "tztime berlin"
+order += "volume master"
+
+tztime berlin {
+        format = "%d-%m-%Y %H:%M:%S"
+        timezone = "Europe/Berlin"
+}
+
+load {
+        format = "%5min"
+}
+
+cpu_temperature 0 {
+        format = "T: %degrees °C"
+        path = "/sys/devices/platform/coretemp.0/temp1_input"
+}
+
+memory {
+        format = "%used"
+        threshold_degraded = "10%"
+        format_degraded = "MEMORY: %free"
+}
+
+disk "/" {
+        format = "%free"
+}
+
+volume master {
+        format = "♪: %volume"
+        format_muted = "♪: muted (%volume)"
+        device = "default"
+        mixer = "Master"
+        mixer_idx = 0
+}
